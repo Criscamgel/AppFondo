@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Card, CardContent, Typography, makeStyles, Button, Box, FormControl, InputLabel, FormHelperText, OutlinedInput, TextField } from '@material-ui/core';
+import { Grid, Card, CardContent, Typography, makeStyles, Button, Box, FormControl, InputLabel, FormHelperText, OutlinedInput, TextField, Divider, Hidden } from '@material-ui/core';
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -15,7 +15,10 @@ const useStyles = makeStyles({
       fontSize: 14,
     },
     customCard: {
-      margin: '5% 5% 0 0'
+      margin: '5% 0',
+      ['@media (min-width:960px)']:{
+        margin: '5% 5% 0 0'  
+      }
     }
   });
 
@@ -114,11 +117,40 @@ const onSubmit = e => {
                     color="textSecondary">
                     {proyectos[0].tipo}
                 </Typography>
+                <Divider /><br />
+                <Grid container>
+                        <Grid item xs={6} md={8}>
+                        <Hidden mdUp>
+                            <Box mr={1}>
+                            <a href="#crearTarea">
+                            <Button 
+                                variant="contained" 
+                                color="primary" 
+                                size="small" 
+                                fullWidth>
+                                    Crear tarea
+                            </Button>
+                            </a>
+                            </Box>
+                        </Hidden>
+                        </Grid>
+                        <Grid item xs={6} md={4}>
+                            <Box ml={1}>
+                            <Button 
+                            variant="contained" 
+                            color="primary" 
+                            size="small" 
+                            fullWidth>
+                                Eliminar Proyecto
+                            </Button>
+                            </Box>
+                        </Grid>
+                </Grid>
 
                 <Grid container>
                 <Grid item xs={12} md={6}>
                     <Grid container>
-                { tareas.map(tarea => (
+                { tareas.map((tarea, key) => (
                         <Grid item xs={12}>
                             <Card className={classes.customCard}>
                                 <CardContent>
@@ -140,13 +172,29 @@ const onSubmit = e => {
                                 </Typography>
 
                                 </CardContent>
+                                <Grid container>
+                                    <Grid item xs={6}>
+                                    </Grid>
+
+                                    <Grid item xs={6}>
+                                        <Box mx={2}>
+                                        <Button
+                                        fullWidth
+                                        variant="contained" 
+                                        color="primary"
+                                        >
+                                            Eliminar tarea
+                                        </Button>
+                                        </Box>
+                                    </Grid>
+                                </Grid>
                             </Card>
                         </Grid>                        
                 ))}
                 </Grid>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid id="crearTarea" item xs={12} md={6}>
                     <Grid container justify="center">
                         <Box textAlign="center" mt={5}>
                         <h2>Crear Tarea <ControlPointIcon /></h2>

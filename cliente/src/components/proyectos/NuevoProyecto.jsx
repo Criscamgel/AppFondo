@@ -61,7 +61,7 @@ const NuevoProyecto = () => {
                 <Grid item xs={10} sm={6}>
                     <Grid container justify="center">
                         <Box textAlign="center" mt={5}>
-                        <h2>Crear Cuenta <ControlPointIcon /></h2>
+                        <h2>Crear Proyecto <ControlPointIcon /></h2>
                         <form
                             onSubmit={onSubmit}
                         >
@@ -69,17 +69,17 @@ const NuevoProyecto = () => {
                             <Box mb={2}>
 
                             <FormControl variant="outlined" fullWidth>
-                                <InputLabel htmlFor="nombre">Nombres y apellidos</InputLabel>
+                                <InputLabel htmlFor="nombre">Nombre del proyecto</InputLabel>
                                 <OutlinedInput 
                                     id="nombre"
                                     value={nombre}
                                     name='nombre'
                                     type="nombre"
                                     aria-describedby="nombre"
-                                    label="Nombres y apellidos"
+                                    label="Nombres del proyecto"
                                     onChange={cambiodeValor}
                                     />
-                                <FormHelperText id="nombre">Escribe tu nombres y apellidos</FormHelperText>
+                                <FormHelperText id="nombre">Escribe el nombre de tu proyecto</FormHelperText>
                             </FormControl>
 
                             </Box>
@@ -133,13 +133,7 @@ const NuevoProyecto = () => {
                                     type="submit" 
                                     startIcon={<ExitToAppIcon />} 
                                     fullWidth
-                                >Registrarme</Button>
-                                <Link 
-                                    to={'/'}
-                                    id="linkA"
-                                    >
-                                    <p>Volver a iniciar sesión</p>
-                                </Link>
+                                >Crear proyecto</Button>
                             </Box>
 
                         </Grid>

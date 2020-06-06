@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, makeStyles, Card, CardContent, Typography, CardActions, Button } from "@material-ui/core";
+import { Grid, makeStyles, Card, CardContent, Typography, CardActions, Button, Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -47,10 +47,10 @@ const ListadoProyectos = () => {
 
       <Typography variant="h5" component="h2">
       Bienvenido! Usuario
-      </Typography>
-
-      <Grid container>
-      { proyectos.map(proyecto => (
+      </Typography>      
+      <Divider /><br />
+      <Grid container>      
+      { proyectos.map((proyecto, key) => (
 
         <Grid item xs={12} md={4}>
                 <Card className={classes.customCard}>

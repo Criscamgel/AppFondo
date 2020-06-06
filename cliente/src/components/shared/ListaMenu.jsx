@@ -1,14 +1,23 @@
 import React from 'react';
 import { List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import Oculto from './Oculto';
+import VisibilityRoundedIcon from '@material-ui/icons/VisibilityRounded';
 import { Link } from 'react-router-dom';
 
 const ListaMenu = () => {
     return ( 
         <>            
             <List component='nav'>
+
+                <Link to='/proyectos'>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <VisibilityRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary='Ver mis proyectos' />
+                    </ListItem>
+                </Link>
+
                 <Link to="/proyectos/crear-proyecto">
                     <ListItem button>
                         <ListItemIcon>
@@ -16,18 +25,11 @@ const ListaMenu = () => {
                         </ListItemIcon>
                         <ListItemText primary='Crear proyecto' />
                     </ListItem>
-                </Link>
-
-                <ListItem button>
-                    <ListItemIcon>
-                        <AccountCircleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Texto Dos' />
-                </ListItem>
+                </Link>                
 
                 <Divider />
 
-                <Oculto />
+                {/* <Oculto /> */}
 
             </List>
         </>
