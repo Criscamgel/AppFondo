@@ -1,15 +1,17 @@
 import React from 'react';
-import NuevoProyecto from '../proyectos/contenido/NuevoProyecto';
 import { Route, Switch } from 'react-router-dom';
-import Inicio from '../proyectos/contenido/Inicio';
+import ListadoProyectos from '../proyectos/ListadoProyectos';
+import NuevoProyecto from '../proyectos/NuevoProyecto';
+import Proyecto from '../proyectos/Proyecto';
 
 const Contenido = () => {
     return ( 
         <>
                 
         <Switch>
-            <Route exact path="/proyectos" component={Inicio} />
+            <Route exact path="/proyectos" component={ListadoProyectos} />
             <Route exact path="/proyectos/crear-proyecto" component={NuevoProyecto} />
+            <Route exact path="/proyectos/proyecto" component={Proyecto} />
         </Switch>
         </>
      );

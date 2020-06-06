@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Hidden} from '@material-ui/core';
 import Navbar from '../shared/Navbar';
-import Contenido from '../shared/Contenido';
+import Contenido from '../layout/Contenido';
 import Cajon from '../shared/Cajon';
 
 const estilos = makeStyles(tema => ({
@@ -49,7 +49,7 @@ const Proyectos = () => {
                 <div className={classes.toolbar}></div>
                 <Contenido />
             </div>
-        </div>            
+        </div>                   
         </>
      );
 }

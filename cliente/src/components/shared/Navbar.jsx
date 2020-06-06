@@ -50,7 +50,7 @@ const Navbar = (props) => {
                     className={classes.title}
                     variant="h6">
                     <Link to="/proyectos">
-                        Inicio
+                        Mis Proyectos
                     </Link>
                 </Typography>
                 <Button                     
