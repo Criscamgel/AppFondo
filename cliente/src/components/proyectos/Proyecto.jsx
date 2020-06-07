@@ -4,6 +4,7 @@ import ControlPointIcon from '@material-ui/icons/ControlPoint';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link } from 'react-router-dom';
+import ListadoTareas from '../tareas/ListadoTareas';
 
 const useStyles = makeStyles({
     bullet: {
@@ -38,30 +39,7 @@ const useStyles = makeStyles({
         tipo: 'uno',
         correo: 'correo@correo.com'
         }
-    ]
-
-  const tareas = [
-      {     
-        nombre: 'tarea 1',
-        responsable: 'Lunes',  
-        prioridad: 'Alta'
-      },
-      {     
-        nombre: 'tarea 1',
-        responsable: 'Lunes',  
-        prioridad: 'Alta'
-      },
-      {     
-        nombre: 'tarea 1',
-        responsable: 'Lunes',  
-        prioridad: 'Alta'
-      },
-      {     
-        nombre: 'tarea 1',
-        responsable: 'Lunes',  
-        prioridad: 'Alta'
-      }
-  ]  
+    ]   
 
 
 const Proyecto = () => {
@@ -76,8 +54,7 @@ const Proyecto = () => {
 //Extraer de Usuario
 const { nombre, responsable } = proyecto;
 
-
-  const cambiodeValor = (e, val) => {
+const cambiodeValor = (e, val) => {
     if(e.target.name){             
     guardarProyecto({
         ...proyecto,
@@ -90,7 +67,7 @@ const { nombre, responsable } = proyecto;
         [val.campo] : val.nombre
     }) 
    }
-} 
+}
 
 const onSubmit = e => {
     e.preventDefault();
@@ -150,47 +127,7 @@ const onSubmit = e => {
                 <Grid container>
                 <Grid item xs={12} md={6}>
                     <Grid container>
-                { tareas.map((tarea, key) => (
-                        <Grid item xs={12}>
-                            <Card className={classes.customCard}>
-                                <CardContent>
-                                
-                                <Typography variant="h5" component="h2">
-                                {tarea.nombre}
-                                </Typography>
-
-                                <Typography
-                                    className={classes.title}
-                                    color="textSecondary">
-                                    {tarea.prioridad}
-                                </Typography>
-
-                                <Typography
-                                    className={classes.title}
-                                    color="textSecondary">
-                                    {tarea.responsable}
-                                </Typography>
-
-                                </CardContent>
-                                <Grid container>
-                                    <Grid item xs={6}>
-                                    </Grid>
-
-                                    <Grid item xs={6}>
-                                        <Box mx={2}>
-                                        <Button
-                                        fullWidth
-                                        variant="contained" 
-                                        color="primary"
-                                        >
-                                            Eliminar tarea
-                                        </Button>
-                                        </Box>
-                                    </Grid>
-                                </Grid>
-                            </Card>
-                        </Grid>                        
-                ))}
+                        <ListadoTareas />
                 </Grid>
                 </Grid>
 
